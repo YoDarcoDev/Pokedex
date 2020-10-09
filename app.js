@@ -60,7 +60,7 @@ function fetchPokemonComplet(pokemon) {
     fetch(url)
     .then((reponse) => reponse.json())
     .then((pokeData) => {
-        // console.log(pokeData);          // Récupère chaque pokemon avec ses caractéristiques
+        console.log(pokeData);          // Récupère chaque pokemon avec ses caractéristiques
 
         objPokemonFull.pic = pokeData.sprites.front_default;                // Image
         objPokemonFull.type = pokeData.types[0].type.name;                  // Espèce
@@ -169,11 +169,11 @@ function addPoke(nb) {
 // RECHERCHE POKEMON 
 
 // avec le bouton
-// const formRecherche = document.querySelector('form');
-// formRecherche.addEventListener('submit', (event) => {
-//     event.preventDefault();
-//     recherche();
-// } )
+const formRecherche = document.querySelector('form');
+formRecherche.addEventListener('submit', (event) => {
+    event.preventDefault();
+    recherche();
+} )
 
 
 searchInput.addEventListener('keyup', recherche);
